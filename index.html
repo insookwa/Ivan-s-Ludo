@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Arrays</title>
+        <link rel="stylesheet" href="./desighn/style.css">
+        
+    </head>
+<body >
+    <p class="heading">IVAN'S LUDO  </p>
+    <img id = "dicee" src="./images/91fcd0467dfbab473d016fbb5e535b88.png" alt="die roller" >
+    
+    <main >
+        <p id="greeting" ></p>
+    <p id="arr1"></p>
+    <p id="arr2"></p>
+    <p id="demo"></p>
+    <p id="test"></p>
+    
+    <p>PRESS THE BUTTON  TO SORT ALPHABETICALLY </p>
+    <button onclick="myfunction1()">Sort alphabetically </button>
+    <button onclick="myfunction2()">Sort numerically  </button>
+    <button onclick="myfunction6()">Roll the dice</button>
+    <button onclick="myfunction4()">Expert dice</button>
+
+    <script>
+        let cars = ["BMW","voxy","subaru","impreza"];
+        let kids = ["lubega","Asinguire","Nsookwa","Kusaasira","Kasiiswa"];
+        let dice =[1,2,3,5,6];
+        let die = [12,333,45,7,5,3,9,6,22,3];
+
+        function myfunction1(){
+            cars.sort();
+            document.getElementById("arr1").innerHTML=kids;
+        }
+        function myfunction2(){
+            
+        cars.sort(function(a,b) {return a-b });
+        document.getElementById("arr1").innerHTML=kids;
+
+
+        }
+        function myfunction3(){
+
+            dice.sort(function(a,b){return 0.5-Math.random()});
+            document.getElementById("arr1").innerHTML=dice;
+
+        }
+
+        function myfunction4(){
+            for(let i = die.length;i>0;i--){
+                
+                j = Math.floor(Math.random()*i)
+                k=die[i]
+                die[i]=die[j]
+                die[j]=k
+                document.getElementById("arr1").innerHTML=k;
+
+
+
+            }
+
+
+
+            
+        }
+        let txt="";
+
+
+        function myfunction5(value){
+            txt = txt +value+ "<br>";
+
+            
+        }
+
+        function myfunction6(){
+                
+                let f = Math.floor(Math.random() * 6)+1;
+                document.getElementById("arr1").innerHTML = f;
+
+                switch(f){
+                    case 1:
+                        document.getElementById('dicee').src = './images/1.PNG';
+                        break;
+                    case 2:
+                    document.getElementById('dicee').src = './images/2.PNG';
+                        break;
+                    case 3:
+                    document.getElementById('dicee').src = './images/3.PNG';
+                        break;
+                    case 4:
+                    document.getElementById('dicee').src = './images/4.PNG';
+                        break;
+                    case 5:
+                    document.getElementById('dicee').src = './images/5.PNG';
+                        break;
+                    case 6:
+                    document.getElementById('dicee').src = './images/6.PNG';
+                        break;
+                }
+                
+             }
+
+        die.forEach(myfunction5);
+        document.getElementById("demo").innerHTML = die ;
+
+       console.log("i am here ");
+
+       var d =  new Date();
+       document.getElementById("test").innerHTML=d.getTime() ;
+
+       if(d.getHours()<12){
+           document.getElementById("greeting").innerHTML = "Good Morning";
+           console.log(d.getHours());
+       }else{
+        document.getElementById("greeting").innerHTML = "Good Evening ";
+        console.log(d.getHours());
+
+       }
+
+      
+
+      
+
+       
+        
+    </script>
+    
+</main>
+
+
+    </body>
+</html>
